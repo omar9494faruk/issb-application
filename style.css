@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.header-part {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-top:1%;
+}
+.header-part .logo-area {
+    float:left;
+    width:20%
+}
+.header-part .logo-area img {
+    width:26%;
+}
+.header-part .menu-area {
+    width: 70%;
+    float: left;
+}
+.header-part .menu-area ul {
+    margin:0;
+    padding: 0;
+}
+.header-part .menu-area ul li {
+    list-style: none;
+    float:left;
+    margin-left: 10px;
+    max-width: 10%;
+    text-align: center;
+}
+.header-part .menu-area ul li a {
+    text-decoration: none;
+    color:black;
+    transition: all 0.5s ease;
+    padding: 15px 30px;
+    width: 100px; /* Adjust as needed */
+    display: inline-block;
+    text-align: center;
+}
+.header-part .menu-area ul li a:hover {
+    color :#777;
+    font-weight: bold;
+}
+.header-part .profile-area{
+    width:10%;
+    float: right;
+}
+
+
+
+.goto-main-part{
+    width: 100%;
+    text-align: center;
+}
+.registration {
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+.registration input{
+    font-size: 22px;
+    width: 35%;
+    margin-top: 12px;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 6px;
+}
+.login input {   
+    font-size: 22px;
+    width: 35%;
+    margin-top: 12px;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 6px;
+}
+input.entry {
+    font-size :16px;
+    width:20%;
+}

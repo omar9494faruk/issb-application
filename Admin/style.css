@@ -1,0 +1,332 @@
+body{
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.admin-header {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.admin-header ul {
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.admin-header ul li {
+    list-style: none;
+    text-align: center;
+    flex: 1; 
+}
+
+.admin-header ul li a {
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    display: block; 
+}
+.admin-header ul li a:hover {
+    color:#48dbfb;
+    transition:0.5s;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.login-part input{
+    font-size: 22px;
+    width: 30%;
+    margin-top: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    background-color: #e3e8e5;
+    padding: 5px;
+    border-radius: 6px;
+}
+input.submit {
+    font-size :16px;
+    width:15%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color:#fff;
+}
+
+.update {
+    width:100%;
+}
+.update ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow: hidden;
+}
+.update ul li {
+    float: left;
+    overflow: hidden;
+    width:13%;
+    margin-left:1%;
+    margin-top:30px;
+}
+.update ul li a {
+    text-decoration: none;
+    color:#fff;
+    background-color: #000000;
+    width:100%;
+    height:100px;
+    display: inline-block;
+    padding-top: 49px;
+    transition:0.5s;
+    font-size:1.2em;
+    text-transform: uppercase;
+}
+.update ul li a:hover {
+    background-color: #4d4f4e;
+}
+
+.wat-main {
+    text-align:center;
+}
+
+.wat-main .wat-form input {
+    font-size :16px;
+    width:15%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #e3e8e5;
+    padding: 5px;
+    border-radius: 6px;
+
+}
+.wat-main .wat-lists ul  {
+    list-style:none;
+    margin-top: 10px;
+}
+
+
+
+
+
+.essay-main-part {
+    width: 100%;
+}
+.essay-main-part .engTable {
+width:50%;
+float:left;
+overflow: hidden;
+}
+.essay-main-part .banTable {
+    width:50%;
+    float:right;
+}
+.essay-main-part input {
+    font-size :20px;
+    width:30%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #e3e8e5;
+    padding: 5px;
+    border-radius: 6px;
+
+}
+.essay-main-part input.submitBan {
+    font-size :16px;
+    width:10%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color:#fff;
+}
+.essay-main-part .engTable table,
+.essay-main-part .banTable table {
+    width:88%;
+    margin:auto;
+}
+.banTable table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+input.tatSub{
+    font-size :20px;
+    width:10%;
+    border: 1px solid transparent;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #9b59b6;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+}
+.wat-main .wat-form input.watSub{
+    font-size :20px;
+    width:10%;
+    border: 1px solid transparent;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #f1c40f;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+}
+input.tatSub:hover{
+    border:1px solid #9b59b6;
+    background-color: #fff;
+    color:#9b59b6;
+    transition:0.5s;
+}
+
+.wat-main .wat-form input.watSub:hover{
+    border:1px solid #f1c40f;
+    background-color: #fff;
+    color:#f1c40f;
+    transition:0.5s;
+}
+
+
+
+
+.cs-main-part {
+    width: 100%;
+}
+.cs-main-part .engTable {
+width:50%;
+float:left;
+overflow: hidden;
+}
+.cs-main-part .banTable {
+    width:50%;
+    float:right;
+}
+.cs-main-part input {
+    font-size :20px;
+    width:30%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #e3e8e5;
+    padding: 5px;
+    border-radius: 6px;
+
+}
+.cs-main-part input.submitBan {
+    font-size :16px;
+    width:10%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color:#fff;
+}
+.cs-main-part .engTable table,
+.cs-main-part .banTable table {
+    width:88%;
+    margin:auto;
+}
+.banTable table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.cs-main-part .csSub{
+    font-size :20px;
+    width:10%;
+    border: 1px solid transparent;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #1abc9c;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+}
+.cs-main-part .csSub:hover{
+    border:1px solid #1abc9c;
+    background-color: #fff;
+    color:#1abc9c;
+    transition:0.5s;
+}
+
+
+
+
+
+
+
+
+.fb-main-part {
+    width: 100%;
+}
+.fb-main-part .engTable {
+width:50%;
+float:left;
+overflow: hidden;
+}
+.fb-main-part .banTable {
+    width:50%;
+    float:right;
+}
+.fb-main-part input {
+    font-size :20px;
+    width:30%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #e3e8e5;
+    padding: 5px;
+    border-radius: 6px;
+
+}
+.fb-main-part input.submitBan {
+    font-size :16px;
+    width:10%;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color:#fff;
+}
+.fb-main-part .engTable table,
+.fb-main-part .banTable table {
+    width:88%;
+    margin:auto;
+}
+.banTable table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.fb-main-part .fbSub{
+    font-size :20px;
+    width:10%;
+    border: 1px solid transparent;
+    margin-top: 12px;
+    border: 1px solid transparent;
+    background-color: #C4E538;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+}
+.fb-main-part .fbSub:hover{
+    border:1px solid #C4E538;
+    background-color: #fff;
+    color:#C4E538;
+    transition:0.5s;
+}
