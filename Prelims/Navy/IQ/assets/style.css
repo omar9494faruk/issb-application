@@ -1,0 +1,150 @@
+body {
+    margin:0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+.main .number {
+    overflow: hidden;
+    width:100%;
+}
+.main .number ul {
+    margin:0;
+    padding:0;
+}
+.main .number ul li {
+    list-style: none;
+    float: left;
+    background-color: aquamarine;
+    border:1px solid black;
+    padding: 3px 9px;
+    font-size: 20px;
+}
+
+
+
+
+
+.header-part {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    position:relative;
+    top:0;
+    padding-top:10px;
+    background-color: #207b874e;
+}
+.header-part .logo-area {
+    float:left;
+    width:100%;
+    color: #fff;
+}
+.header-part .logo-main-area  {
+    width:30%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .logo-area .text-area {
+    width: 80%;
+    font-size : 1.6em;
+    color:#c4f1ff;
+}
+.header-part .logo-area .text-area p {
+    margin-top:10px;
+}
+.header-part .logo-area img {
+    width:6%;
+    float:left;
+    overflow: hidden;
+}
+.header-part .menu-area {
+    /* width: 50%; */
+    float: left;
+    margin-top:-16px;
+}
+.header-part .menu-area ul {
+    margin:0;
+    padding: 0;
+    margin-top:10px;
+}
+.header-part .menu-area ul li {
+    list-style: none;
+    float:left;
+    margin-left: 40px;
+    max-width: 10%;
+    text-align: center;
+}
+.header-part .menu-area ul li a {
+    text-decoration: none;
+    color:#c4f1ff;
+    transition: all 0.5s ease;
+    padding: 15px 30px;
+    width: 100px; 
+    display: inline-block;
+    text-align: center;
+    font-size:22px;
+    transition:0.5s;
+
+}
+.header-part .menu-area ul li a:hover {
+    color :#389d9f;
+    font-weight: bold;
+}
+.header-part .profile-area{
+    width:10%;
+    float: right;
+}
+
+
+.main-part h2 {
+    text-align: center;
+    color:#389d9f
+}
+
+
+
+
+.main-part form {
+    text-align: center;
+}
+
+.main-part form input,
+.main-part form select {
+    font-size : 25px;
+    background-color: #389d9f;
+    border: 1px solid transparent;
+    color: #fff;
+    padding :5px;
+}
+.main-part form input {
+    padding :5px 9px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.main-part form input:hover {
+    background-color: #fff;
+    color:#389d9f;
+    border: 1px solid #389d9f;
+}
+
+
+#timer {
+    position: absolute;
+    right: 2%;
+    top: 8%;
+}
+
+.main-part form ul{
+    overflow: hidden;
+    width:30%;
+    margin:auto;
+    margin-bottom:2%;
+}
+
+.main-part form ul li {
+    float: left;
+    overflow: hidden;
+    margin: 0 1%;
+}

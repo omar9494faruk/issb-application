@@ -3,82 +3,87 @@ session_start();
 if($_SESSION['loggedIn'] != true){
     header("Location: ../../index.php");
 }
-// Database Connection
-$conn = new mysqli("localhost", "root", "", "CT");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$queryBangla = mysqli_query($conn, "SELECT * FROM `bangla`");
-$queryEnglish = mysqli_query($conn, "SELECT * FROM `english`");
-$rowNumberB = mysqli_num_rows($queryBangla);
-$rowNumberE = mysqli_num_rows($queryEnglish);
-// Generate Random Numbers
-$random1 = rand(1, $rowNumberB);
-$random2 = rand(1, $rowNumberE);
+$conn = mysqli_connect('localhost','searchli_mainDevAlpha','AkashBhoraTara@','searchli_users');
 
-// Fetch Stories
-$englishQuery = "SELECT story FROM english WHERE id IN ($random1, $random2)";
-$banglaQuery = "SELECT story FROM bangla WHERE id IN ($random1, $random2)";
+$eligibility = $conn-> prepare("SELECT story FROM `user_test_appear` WHERE `email` = ? ");
+$eligibility-> bind_param("s", $_SESSION['email']);
+$eligibility->execute();
+$robo = $eligibility-> get_result();
+$eligible = $robo -> fetch_assoc();
 
-$englishResult = $conn->query($englishQuery);
-$banglaResult = $conn->query($banglaQuery);
 
-$stories = [];
+if(isset($_POST['startTest'])){
+    $newValue = (int)$eligible['story'] + 1;
 
-while ($row = $englishResult->fetch_assoc()) {
-    $stories[] = $row['story'];
-}
+    $stmt3 = $conn->prepare("UPDATE `user_test_appear` SET `story` = ? WHERE `email` = ?");
+    $stmt3->bind_param("is", $newValue, $_SESSION['email']);
+    $stmt3->execute();
 
-while ($row = $banglaResult->fetch_assoc()) {
-    $stories[] = $row['story'];
+    $newValue1 = (int)$eligible['iq'] + 1;
+
+    $stmt4 = $conn->prepare("UPDATE `user_test_appear` SET `tat` = ? WHERE `email` = ?");
+    $stmt4->bind_param("is", $newValue, $_SESSION['email']);
+    $stmt4->execute();
+
+
+    header("Location: main.php");
 }
 
-$conn->close();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Story Viewer</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const stories = <?php echo json_encode($stories); ?>;
-            let index = 0;
-
-            function showStory() {
-                if (index < stories.length) {
-                    document.getElementById('story-container').innerText = stories[index];
-                    index++;
-                    setTimeout(hideStory, 30000); // 30 seconds display
-                } else {
-                    window.location.href = "../tat/"; // Move to another file
-                }
-            }
-
-            function hideStory() {
-                document.getElementById('story-container').innerText = "";
-                let countdown = 150;
-                const timerElement = document.getElementById('timer');
-                timerElement.innerText = `Next story in ${Math.floor(countdown / 60)}:${('0' + (countdown % 60)).slice(-2)}`;
-
-                const timerInterval = setInterval(() => {
-                    countdown--;
-                    timerElement.innerText = `Next story in ${Math.floor(countdown / 60)}:${('0' + (countdown % 60)).slice(-2)}`;
-                    if (countdown <= 0) {
-                        clearInterval(timerInterval);
-                        timerElement.innerText = "";
-                        showStory();
-                    }
-                }, 1000);
-            }
-
-            showStory();
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situational Reaction Test and Thematic Appreception Test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="story-container" style="font-size: 20px; text-align: center; padding: 20px;"></div>
-    <div id="timer" style="font-size: 18px; text-align: center; padding: 10px; color: red;"></div>
+    <div class="header-part">
+            <div class="logo-area">
+            <a href="index.php"><img src="../../images/logo.png" alt="Logo" srcset=""></a>
+                <div class="text-area">
+                    <p style="color:#fff">Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                </ul>
+            </div>
+     </div>
+     <div class="main-part">
+        <h1>Situational Reaction Test and Thematic Appreception Test</h1>
+        <form action="" method="post">
+            <?php if($_SESSION['user_type'] == 'regular') {
+                if($eligible['story'] < 2){ ?>
+                   <input type="submit" value="Start Test" name="startTest">
+            <?php     }else { ?>
+                <input type="submit" value="Start Test" name="startTest" disabled>
+                <p style="color:red;s">Free access to mock tests has ended. <a href="">Click here</a> to get access</p>
+            <?php }
+            }else { ?>
+                <input type="submit" value="Start Test" name="startTest">
+           <?php } ?>
+        </form>
+     </div>
+     <div class="instruction">
+        <h2>Instructions :</h2>
+        <h3>Situational Reaction Test :</h3>
+        <ul>
+            <li>FIRST 02 STORY IN ENGLISH</li>
+            <li>LAST 2 STORY IN BANGLA </li>
+            <li>2 STORIES IN EVERY PAGE</li>
+        </ul>
+        <h3>Thematic Appreception Test:</h3>
+        <ul>
+            <li>FIRST 02 STORY IN ENGLISH</li>
+            <li>LAST 2 STORY IN BANGLA </li>
+            <li>2 STORIES IN EVERY PAGE</li>
+        </ul>
+     </div>
+
+    
 </body>
 </html>

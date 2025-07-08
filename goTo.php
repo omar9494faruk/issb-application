@@ -18,6 +18,14 @@ if(isset($_POST['register'])){
    $stmt1->execute();
 
 
+ $stmt3 = $conn -> prepare(
+    "INSERT INTO `user_test_appear` (`id`, `name`, `username`, `email`, `iq`, `wat`, `tat`, `sentence`, `story`, `essay`, `ppdt`, `pNavy`, `pArmy`, `pBafaIQ`, `pBafaElse`) 
+    VALUES (NULL, ?, ?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)"
+);
+   $stmt3->bind_param("sss", $name, $username, $email,);
+   $stmt3->execute();
+
+
 
 
     $message = "Your account has been registered. You can login with you email and password";
@@ -52,7 +60,13 @@ if(isset($_POST['login'])){
     if($verify_result['email'] == $email ){
         if($verify_result['password'] == $password){
             $_SESSION['loggedIn'] = true;
-            header('Location: profile.php');
+            $_SESSION['email'] = $email;
+            if($verify_result['user_type'] == 'premium'){
+                $_SESSION['user_type'] = 'premium';
+            }else{
+                $_SESSION['user_type'] = 'regular';
+            }
+            header('Location: index.php');
         }else{
             $wrongPass = "Password you entered is wrong";
         }
@@ -85,11 +99,26 @@ if(isset($conn)){
     <title>Search Light</title>
     <?php include 'templates/uikit.php'; ?>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-    <?php include 'templates/header.php'; ?>
+    <div class="goto-hero-bg">
+<div class="goto-header-part header-part">
+            <div class="logo-area">
+                <a href="index.php"><img src="images/logo.png" alt="Logo" srcset=""></a>
+                <div class="text-area">
+                    <p>Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Blogs</a></li>
+                </ul>
+            </div>
+</div>
     
-    <div class="goto-main-part">
+<div class="goto-main-part">
     <p>
         <?php
             if(isset($wrongMail)){
@@ -110,9 +139,9 @@ if(isset($conn)){
             <input type="email" name="email" id="" placeholder="Email Address" required><br>
             <input type="text" name="username" id="" placeholder="Username" required>
             <input type="password" name="password" id="" placeholder="Password" required><br>
-            <input type="number" name="phoneNumber" id="" placeholder="Phone Number" required><br>
+            <input type="text" name="phoneNumber" id="" placeholder="Phone Number" required><br>
 
-            <input type="submit" value="Register" name="register" class="entry">
+            <input type="submit" value="Register" name="register" class="entryReg">
         </form>
     </div>
     <div class="login">
@@ -123,8 +152,8 @@ if(isset($conn)){
             <input type="submit" value="Login" name="login" class="entry">
         </form>
     </div>
-    </div>
-
+</div>
+</div>
 
     <script src="script.js"></script>
 </body>

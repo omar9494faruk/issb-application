@@ -1,11 +1,10 @@
 <?php
-
 session_start();
-// if (!isset($_SESSION['username'])) {
+if ($_SESSION['adminLoggedIn'] = true) {
     
-//     header("Location: ../index.php");
-//     exit();
-// }
+    header("Location: update.php");
+    exit();
+}
 include 'adm-conf.php';
 $message;
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,9 +17,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if($user && $user['password']==$password){
         $_SESSION['username'] = $username;
+        $_SESSION['adminLoggedIn'] =  true;
         header('Location: update.php');
     }else{
         $message = "Invalid cridentials";
+        $_SESSION['adminLoggedIn'] = 'no';
     }
 
 
@@ -63,5 +64,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" value="Login" name="submit" class="submit">
     </form>
     </div>
+
+
+
 </body>
 </html>

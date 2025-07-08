@@ -1,9 +1,14 @@
 <?php
+session_start();
+if ($_SESSION['adminLoggedIn'] != true) {
+    
+    header("Location: ../index.php");
+    exit();
+}
 
-include 'verify.php';
 
 $message;
-$conn = mysqli_connect("localhost", "root", "", "fb");
+$conn = mysqli_connect("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_fb");
 
     if(isset($_POST['engSubmit'])){
         $words = $_POST['sentence_english'];

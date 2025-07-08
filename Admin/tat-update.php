@@ -1,6 +1,12 @@
 <?php
+session_start();
+if ($_SESSION['adminLoggedIn'] != true) {
+    
+    header("Location: ../index.php");
+    exit();
+}
 // Database connection
-$conn = mysqli_connect("localhost", "root", "", "TAT");
+$conn = mysqli_connect("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_TAT");
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

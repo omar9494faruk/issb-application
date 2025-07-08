@@ -4,11 +4,17 @@ if($_SESSION['loggedIn'] != true){
     header("Location: ../../index.php");
 }
 
-$conn =  mysqli_connect('localhost', 'root','', 'WAT');
+$conn =  mysqli_connect('localhost', 'searchli_mainDevAlpha','AkashBhoraTara@', 'searchli_WAT');
+$conn2 =  mysqli_connect('localhost', 'searchli_mainDevAlpha','AkashBhoraTara@', 'searchli_users');
 if(!$conn){
     die("Connection failed : " . mysqli_connect_error());
 }
 
+$eligibility = $conn2-> prepare("SELECT wat FROM `user_test_appear` WHERE `email` = ? ");
+$eligibility-> bind_param("s", $_SESSION['email']);
+$eligibility->execute();
+$robo = $eligibility-> get_result();
+$eligible = $robo -> fetch_assoc();
 
 $stmt1 = $conn -> prepare("SELECT * FROM `words`");
 $stmt1->execute();
@@ -88,6 +94,20 @@ if ($rowsN > 0) {
     </script>
 </head>
 <body>
+<div class="header-part">
+            <div class="logo-area">
+            <a href="index.php"><img src="../../images/logo.png" alt="Logo" srcset=""></a>
+                <div class="text-area">
+                    <p style="color:#fff">Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                    <li><a href="../../index.php" style="color:#fff">Home</a></li>
+                    <li><a href="../../blogs/" style="color:#fff">Blogs</a></li>
+                </ul>
+            </div>
+        </div>
     <div class="header">
         <h1>WAT Practice for ISSB</h1>
     </div>
@@ -99,7 +119,18 @@ if ($rowsN > 0) {
     </div>
 
     <!-- Start Button -->
-    <button id="startButton">Start</button>
+     <?php if($_SESSION['user_type'] == 'regular') {
+                if($eligible['wat'] < 2){ ?>
+                   <button id="startButton">Start</button>
+            <?php     }else { ?>
+                <button id="startButton">Start</button>
+            <?php }
+            }else { ?>
+                <button id="startButton">Start</button>
+           <?php }
+            
+            ?>
+
 
     <div class="footer">
         <p>All rights reserved | 2025</p>

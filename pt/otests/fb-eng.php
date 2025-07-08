@@ -7,7 +7,7 @@ if($_SESSION['loggedIn'] != true){
 
 
 // Create connection
-$conn = new mysqli("localhost", "root", "", "fb");
+$conn = new mysqli("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_fb");
 
 // Check connection
 if ($conn->connect_error) {
@@ -37,6 +37,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Completing Sentences</title>
+    <link rel="stylesheet" href="style.css">
     <script>
         let timeLimit = 5 * 60; // 5 minutes in seconds
         let timer;
@@ -68,16 +69,29 @@ if ($result->num_rows > 0) {
     </script>
 </head>
 <body>
+<div class="header-part">
+            <div class="logo-area">
+            <div class="logo-main-area"><a href="../../index.php"><img src="../../images/logo.png" alt="Logo" srcset=""></a></div>
+                <div class="text-area">
+                    <p style="color:#fff">Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
 
-    <h1>Completing Sentences</h1>
-    <div id="timer" style="font-size: 30px; font-weight: bold;">5:00</div>
+    <h1 class="text">Completing Sentences : English </h1>
+    <div class="text" id="timer" style="font-size: 30px; font-weight: bold;">5:00</div>
 
     <h3>English Sentences:</h3>
-    <ul>
+    <ol class="sentence">
         <?php foreach ($sentences as $sentence): ?>
             <li><?php echo htmlspecialchars($sentence); ?></li>
         <?php endforeach; ?>
-    </ul>
+    </ol>
 
 </body>
 <?php

@@ -1,9 +1,14 @@
 <?php
+session_start();
+if ($_SESSION['adminLoggedIn'] != true) {
+    
+    header("Location: ../index.php");
+    exit();
+}
 
-include 'verify.php';
 
 $message;
-$conn = mysqli_connect("localhost", "root", "", "CT");
+$conn = mysqli_connect("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_CT");
 
     if(isset($_POST['submitEng'])){
         $storyEng = $_POST['story_english'];

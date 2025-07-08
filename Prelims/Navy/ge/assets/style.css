@@ -1,0 +1,289 @@
+body {
+    margin:0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main-part {
+    padding : 0 20px;
+}
+.main .number {
+    overflow: hidden;
+    width:100%;
+}
+.main .number ul {
+    margin:0;
+    padding:0;
+}
+.main .number ul li {
+    list-style: none;
+    float: left;
+    background-color: aquamarine;
+    border:1px solid black;
+    padding: 3px 9px;
+    font-size: 20px;
+}
+
+
+.header-part {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    position:relative;
+    top:0;
+    padding-top:10px;
+    background-color: #207b874e;
+}
+.header-part .logo-area {
+    float:left;
+    width:100%;
+    color: #fff;
+}
+.header-part .logo-main-area  {
+    width:30%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .logo-area .text-area {
+    width: 90%;
+    font-size : 1.6em;
+    color:#c4f1ff;
+    text-align: left;
+}
+.header-part .logo-area .text-area p {
+    margin-top:10px;
+}
+.header-part .logo-area img {
+    width:5%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .menu-area {
+    float: left;
+    margin-top:-16px;
+}
+.header-part .menu-area ul {
+    margin:0;
+    padding: 0;
+    margin-top:10px;
+}
+.header-part .menu-area ul li {
+    list-style: none;
+    float:left;
+    margin-left: 40px;
+    max-width: 10%;
+    text-align: center;
+}
+.header-part .menu-area ul li a {
+    text-decoration: none;
+    color:#c4f1ff;
+    transition: all 0.5s ease;
+    padding: 15px 30px;
+    width: 100px; 
+    display: inline-block;
+    text-align: center;
+    font-size:22px;
+    transition:0.5s;
+
+}
+.header-part .menu-area ul li a:hover {
+    color :#389d9f;
+    font-weight: bold;
+}
+.header-part .profile-area{
+    width:10%;
+    float: right;
+}
+.index-main-part form {
+    display: block;
+    width:60%;
+    margin: auto;
+    text-align: center;
+    padding-top:20px;
+}
+
+
+
+.index-main-part p {
+    font-size:3em;
+}
+.index-main-part label {
+    font-size:2em;
+}
+.index-main-part form input,
+.index-main-part form select {
+    font-size : 25px;
+    background-color: #389d9f;
+    border: 1px solid transparent;
+    color: #fff;
+    padding :5px;
+}
+.index-main-part form input {
+    padding :5px 9px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.index-main-part form input:hover {
+    background-color: #fff;
+    color:#389d9f;
+    border: 1px solid #389d9f;
+}
+
+
+/* 
+.header-part {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    position:relative;
+    top:0;
+    padding-top:10px;
+    background-color: #207b874e;
+}
+.header-part .logo-area {
+    float:left;
+    width:40%;
+    color: #fff;
+}
+.header-part .logo-main-area  {
+    width:30%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .logo-area .text-area {
+    width: 100%;
+    font-size : 1.6em;
+    color:#c4f1ff;
+}
+.header-part .logo-area .text-area p {
+    margin-top:10px;
+}
+.header-part .logo-area img {
+    width:50%;
+}
+.header-part .menu-area {
+    width: 50%;
+    float: left;
+    margin-top:-16px;
+}
+.header-part .menu-area ul {
+    margin:0;
+    padding: 0;
+    margin-top:10px;
+}
+.header-part .menu-area ul li {
+    list-style: none;
+    float:left;
+    margin-left: 40px;
+    max-width: 10%;
+    text-align: center;
+}
+.header-part .menu-area ul li a {
+    text-decoration: none;
+    color:#c4f1ff;
+    transition: all 0.5s ease;
+    padding: 15px 30px;
+    width: 100px; 
+    display: inline-block;
+    text-align: center;
+    font-size:22px;
+    transition:0.5s;
+
+}
+.header-part .menu-area ul li a:hover {
+    color :#389d9f;
+    font-weight: bold;
+}
+.header-part .profile-area{
+    width:10%;
+    float: right;
+}
+ */
+
+#timer {
+    display: block;
+    position:absolute;
+    width:10%;
+    font-size :30px;
+    font-weight: bold;
+    top:2%;
+    right:2%;
+}
+
+
+.main-part form {
+    display: block;
+    margin:auto;
+    width:70%;
+    text-align: center;
+    list-style: none;
+}
+.main-part form ul.options{
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    width:40%;
+    display: block;
+    margin:auto;
+}
+.main-part form ul.options li {
+    float: left;
+    margin:0 10px;
+}
+
+a.prev-button {
+    position:fixed;
+    top:30%;
+    left:10%;
+    font-size: larger;
+}
+a.next-button {
+    position:fixed;
+    top:30%;
+    right:10%;
+}
+
+input.iqSubmit {
+    font-size:20px;
+    width:10%;
+    padding:7px 4px;
+    background-color: #fff;
+    color:#389d9f;
+    border:2px solid #389d9f;
+    border-radius: 8px;
+    font-weight: bold;
+}
+input.iqSubmit:hover {
+    color:#fff;
+    background-color: #389d9f;
+    transition:0.5s;
+}
+
+@media screen and (max-width:768px) {
+    .options{
+        width: 80%;
+    }
+}
+
+index-main-part form label.answers {
+    /* float: left; */
+    overflow: hidden;
+}
+
+.main-part form input,
+.main-part form select {
+    font-size : 25px;
+    background-color: #389d9f;
+    border: 1px solid transparent;
+    color: #fff;
+    padding :5px;
+}
+.main-part form input {
+    padding :5px 9px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.main-part form input:hover {
+    background-color: #fff;
+    color:#389d9f;
+    border: 1px solid #389d9f;
+}

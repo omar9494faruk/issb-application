@@ -6,7 +6,7 @@ if($_SESSION['loggedIn'] != true){
 // database connection
 
 
-$conn = new mysqli("localhost", "root", "", "essay");
+$conn = new mysqli("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_essay");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -39,13 +39,32 @@ $banglaTopic = getRandomTopic('banTopic');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essay Timer</title>
+    <title>Essay Writing</title>
+    <link rel="stylesheet" href="ess-style.css">
     <style>
-        .topic { font-size: 24px; font-weight: bold; }
-        #timer, #topicDisplay { margin-top: 20px; }
+        .topic { font-size: 30px; font-weight: bold; }
+        #timer, #topicDisplay { margin-top: 20px; text-align:center; }
+        .header-part .logo-area img {
+            width: 15%;
+            float: left;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
+<div class="header-part">
+            <div class="logo-area">
+            <div class="logo-main-area"><a href="../../index.php"><img src="../../images/logo.png" alt="Logo" srcset=""></a></div>
+                <div class="text-area">
+                    <p style="color:#fff">Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                    
+                </ul>
+            </div>
+        </div>
 
     <div id="timer">Waiting for 2 minutes...</div>
     <div id="topicDisplay" class="topic"></div>
@@ -81,7 +100,7 @@ $banglaTopic = getRandomTopic('banTopic');
             document.getElementById("topicDisplay").textContent = englishTopic;
             startTimer(30, document.getElementById("timer"), function() {
                 document.getElementById("topicDisplay").textContent = ""; // Hide topic
-                startTimer(240, document.getElementById("timer"), function() { // 4 mins timer
+                startTimer(300, document.getElementById("timer"), function() { // 4 mins timer
                     // Show Bangla topic for 30 seconds
                     document.getElementById("topicDisplay").textContent = banglaTopic;
                     startTimer(30, document.getElementById("timer"), function() {

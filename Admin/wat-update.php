@@ -1,9 +1,15 @@
 <?php
 
-include 'verify.php';
+
+session_start();
+if ($_SESSION['adminLoggedIn'] != true) {
+    
+    header("Location: ../index.php");
+    exit();
+}
 
 $message;
-$conn = mysqli_connect("localhost", "root", "", "wat");
+$conn = mysqli_connect("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_wat");
 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $words = $_POST['words'];
@@ -23,10 +29,12 @@ $conn = mysqli_connect("localhost", "root", "", "wat");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wat Update</title>
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include 'menu.php'; ?>
     <div class="wat-main">
         <h2 style="color:#f1c40f;">Wat Updates</h2>
         <p style="color:#f1c40f;">**Write 80 words in a single para separated by a space. Click submit to add the words to the databse**</p>

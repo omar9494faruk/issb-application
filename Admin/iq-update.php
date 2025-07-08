@@ -1,10 +1,16 @@
 <?php
+session_start();
+if ($_SESSION['adminLoggedIn'] != true) {
+    
+    header("Location: ../index.php");
+    exit();
+}
 
-$conn = mysqli_connect("localhost", "root", "", "IQ");
-$query = mysqli_query($conn, "SELECT COUNT(*) AS table_count FROM information_schema.tables WHERE table_schema ='IQ' ");
+$conn = mysqli_connect("localhost", "searchli_mainDevAlpha", "AkashBhoraTara@", "searchli_IQ");
+$query = mysqli_query($conn, "SELECT COUNT(*) AS table_count FROM information_schema.tables WHERE table_schema ='searchli_IQ' ");
 $Set = mysqli_fetch_assoc($query);
 
-$tableShow = "SELECT table_name, table_rows FROM information_schema.tables WHERE table_schema = 'IQ'";
+$tableShow = "SELECT table_name, table_rows FROM information_schema.tables WHERE table_schema = 'searchli_IQ'";
 $tableShowOut = $conn->query($tableShow);
 $totalNumber =  $Set['table_count'];
 $newTableName = "set_".$totalNumber+1;
@@ -47,6 +53,7 @@ if(isset($_POST['addSet'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IQ Update</title>
+    <link rel="stylesheet" href="style.css">
 
     <style>
         table, th, td {

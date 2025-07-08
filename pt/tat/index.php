@@ -4,7 +4,7 @@ if($_SESSION['loggedIn'] != true){
     header("Location: ../../index.php");
 }
 // Database connection
-$conn =  mysqli_connect('localhost', 'root','', 'TAT');
+$conn =  mysqli_connect('localhost', 'searchli_mainDevAlpha','AkashBhoraTara@', 'searchli_TAT');
 if(!$conn){
     die("Connection failed : " . mysqli_connect_error());
 }
@@ -45,7 +45,8 @@ foreach ($randomNumbers as $num) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Display</title>
+    <title>Thematic Appreception Test</title>
+    <link rel="stylesheet" href="style.css">
 
 <script>
     let images = <?php echo json_encode($images); ?>;
@@ -67,8 +68,8 @@ foreach ($randomNumbers as $num) {
     // Hide image after 30 seconds and start countdown
     function hideImage() {
         document.getElementById('imageContainer').style.display = 'none';
-        document.getElementById('timer').innerText = "Next image in 2:30";
-        let countdown = 150; // 2 minutes 30 seconds
+        document.getElementById('timer').innerText = "Next image in 3:00";
+        let countdown = 180; // 2 minutes 30 seconds
 
         const countdownInterval = setInterval(() => {
             let minutes = Math.floor(countdown / 60);
@@ -88,9 +89,24 @@ foreach ($randomNumbers as $num) {
 </script>
 </head>
 <body>
+
+<div class="header-part">
+            <div class="logo-area">
+            <div class="logo-main-area"><a href="../../index.php"><img src="../../images/logo.png" alt="Logo" srcset=""></a></div>
+                <div class="text-area">
+                    <p style="color:#fff">Lighting Your Way To Success</p>
+                </div>
+            </div>
+            <div class="menu-area">
+                <ul>
+                    <li><a href="../../index.php" style="color:#fff">Home</a></li>
+                    <li><a href="../../blogs/" style="color:#fff">Blogs</a></li>
+                </ul>
+            </div>
+        </div>
     <h1>Thematic Appreception Test</h1>
     <p id="instruction"></p>
-    <img id="imageContainer" src="" width="200" height="200" style="margin: 10px; display: none;">
+    <img id="imageContainer" src=""  alt="tat" style="margin: 10px; display: none;">
     <p id="timer"></p>
 <?php
 if(isset($stmt1)){

@@ -1,0 +1,52 @@
+@media screen and (max-width:768px) {
+    .header-part .logo-area a {
+        display: block;
+        float: none;
+    }
+    .header-part .logo-area a img {
+        width:50%;
+    }
+    .header-part .logo-area .text-area {
+        display: none;
+    }
+    .header-part .menu-area {
+        display: none;
+    }
+    .course-area ul li, 
+    .test-area ul li {
+        float: none;
+        display: block;
+        margin:auto;
+        width:80%;
+        margin-bottom:1%;
+    }
+
+    .contact-area form input.inqPhone {
+        width:90%;
+    }
+    .contact-area form input.inquirySub {
+        width:40%;
+    }
+
+    .registration{
+        width:90%;
+        margin:auto;
+        margin-bottom:3%;
+    }
+    .login {
+        width:95%;
+        margin:auto;
+    }
+    .goto-hero-bg .goto-main-part input{
+        width:70%;
+        margin:auto;
+        margin-bottom:1%;
+    }
+    .goto-hero-bg .goto-main-part input.entry  {
+        width:20%;
+    }
+    .goto-hero-bg .goto-main-part input.entryReg{
+        width:28%;
+    }
+
+}

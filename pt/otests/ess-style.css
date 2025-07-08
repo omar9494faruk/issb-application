@@ -1,0 +1,115 @@
+body {
+    margin:0;
+    padding:0;
+    color: #389d9f;
+}
+h1 {
+    text-align: center;
+}
+.text {
+    text-align: center;
+}
+
+
+
+
+
+
+.header-part {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    position:relative;
+    top:0;
+    padding-top:10px;
+    background-color: #207b874e;
+}
+.header-part .logo-area {
+    float:left;
+    width:100%;
+    color: #fff;
+}
+.header-part .logo-main-area  {
+    width:30%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .logo-area .text-area {
+    width: 90%;
+    font-size : 1.6em;
+    color:#c4f1ff;
+}
+.header-part .logo-area .text-area p {
+    margin-top:10px;
+}
+.header-part .logo-area img {
+    width:5%;
+    float: left;
+    overflow: hidden;
+}
+.header-part .menu-area ul {
+    margin:0;
+    padding: 0;
+    margin-top:10px;
+}
+.header-part .menu-area ul li {
+    list-style: none;
+    float:left;
+    margin-left: 40px;
+    max-width: 10%;
+    text-align: center;
+}
+.header-part .menu-area ul li a {
+    text-decoration: none;
+    color:#c4f1ff;
+    transition: all 0.5s ease;
+    padding: 15px 30px;
+    width: 100px; 
+    display: inline-block;
+    text-align: center;
+    font-size:22px;
+    transition:0.5s;
+
+}
+.header-part .menu-area ul li a:hover {
+    color :#389d9f;
+    font-weight: bold;
+}
+.header-part .profile-area{
+    width:10%;
+    float: right;
+}
+
+
+
+ul.sentence {
+    text-align: left ;
+    margin-left: 10px;
+}
+
+
+
+.main-part form {
+    text-align:center;
+    margin:1% 0;
+}
+.main-part form input{
+    font-size : 25px;
+    background-color: #389d9f;
+    border: 1px solid transparent;
+    color: #fff;
+    padding :5px;
+}
+.main-part form input {
+    padding :5px 9px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.main-part form input:hover {
+    background-color: #fff;
+    color:#389d9f;
+    border: 1px solid #389d9f;
+}
+.instruction {
+    padding:0 2%;
+}
